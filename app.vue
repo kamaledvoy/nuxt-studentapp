@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="scss-apply">Hello world!</h1>
-
-    <NuxtWelcome />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
