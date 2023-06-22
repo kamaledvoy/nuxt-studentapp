@@ -1,9 +1,13 @@
-<script lang="ts" setup></script>
+<script setup lang="ts">
+  console.log("hello script setup");
+
+  // const tabs = [one, two, three, four, five];
+</script>
 
 <template>
-  <div v-for="item in 1">
-    <h2 class="text-lg font-semibold text-grey-700">Home Page {{ item }}</h2>
-    <div>
+  <div v-for="item in 10">
+    <h2 class="mb-4 text-lg font-semibold text-white">Home Page {{ item }}</h2>
+    <div class="mb-4 text-white/75">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quia
       adipisci obcaecati dicta voluptate iusto eaque quo sapiente molestiae sed
       excepturi ducimus culpa recusandae consequuntur enim ut nobis doloremque
@@ -16,5 +20,6 @@
       nulla tempora expedita excepturi iure aperiam totam, ullam cum maxime
       voluptatum quaerat hic.
     </div>
+    <button class="btn-primary">Save changes</button>
   </div>
 </template>

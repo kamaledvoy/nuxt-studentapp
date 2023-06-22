@@ -5,3 +5,32 @@
 @import "scss/typography";
 
 @tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/40 focus:ring-opacity-75;
+  }
+  .glass-morphism {
+    @apply bg-white/20 backdrop-blur-3xl backdrop-filter bg-opacity-20 ring-1 ring-inset ring-white/20 bg-clip-border border-white/50 border-t border-l;
+  }
+
+  .glass-morphism-white {
+    @apply bg-opacity-50 border-t border-l bg-blend-hard-light backdrop-blur-3xl backdrop-filter bg-white/30 ring-1 ring-inset ring-white/10 border-white/30 drop-shadow;
+  }
+
+  .glass-morphism-gray {
+    @apply bg-opacity-10 border-t border-l bg-blend-hard-light backdrop-blur-3xl backdrop-filter bg-white/10 ring-1 ring-inset ring-white/10 border-white/10;
+  }
+
+  .glass-morphism-black {
+    @apply bg-opacity-10 border-t border-l bg-blend-hard-light backdrop-blur-3xl backdrop-filter bg-black ring-1 ring-inset ring-white/10 border-white/10;
+  }
+
+  .scrollbar-hide {
+    scroll-behavior: smooth;
+    scrollbar-width: 0px;
+    ::-webkit-scrollbar-thumb {
+      width: 0px;
+    }
+  }
+}

@@ -17,7 +17,7 @@
 
 <template>
   <header
-    class="flex justify-between w-full h-16 gap-4 px-12 bg-white border-b border-gray-100"
+    class="flex justify-between w-full h-16 max-w-5xl gap-4 px-2.5 mx-auto rounded-full glass-morphism-white"
   >
     <div class="flex items-center flex-initial w-1/5">
       <img
@@ -30,13 +30,18 @@
       class="flex flex-row items-center justify-end flex-shrink w-full gap-4"
     >
       <template v-for="(item, index) in menuLinks">
-        <NuxtLink :to="item.link" class="px-4 py-2 border rounded">
+        <NuxtLink
+          :to="item.link"
+          class="px-4 py-2 font-medium text-white rounded"
+        >
           {{ item.name }}
         </NuxtLink>
       </template>
     </nav>
     <div class="flex flex-row items-center gap-4">
-      <div class="flex items-center justify-center w-10 h-10 cursor-pointer">
+      <div
+        class="flex items-center justify-center w-10 h-10 rounded-full cursor-pointer bg-white/20"
+      >
         i
       </div>
       <div
