@@ -8,3 +8,15 @@ npm list nuxt
 
 
 https://sass-lang.com/guide
+
+
+https://mokkapps.de/blog/create-a-table-of-contents-with-active-states-in-nuxt-3
+
+
+
+
+
+
+
+
+https://fakestoreapi.com/docs
