@@ -1,5 +1,10 @@
 <template>
   <div>
+    <Head>
+      <Title>Student Product | {{ product.title }}</Title>
+      <Meta name="description" :content="product.description" />
+    </Head>
+
     <h3 class="mb-4 text-lg font-semibold">Product Details Page - {{ id }}</h3>
     <ProductDetails :product="product" />
   </div>

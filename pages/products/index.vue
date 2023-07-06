@@ -47,6 +47,11 @@
     layout: "custom",
   });
 
+  useHead({
+    title: "Student App Products Page",
+    meta: [{ name: "description", content: "Student App Products List Page" }],
+  });
+
   const {
     data: products,
     pending,
