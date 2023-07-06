@@ -31,4 +31,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+    currencyKey: process.env.CURRENCY_API_KEY,
+  },
 });
