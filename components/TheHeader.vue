@@ -23,18 +23,22 @@
   <header
     class="flex justify-between w-full h-16 max-w-5xl gap-4 px-2.5 mx-auto rounded-full glass-morphism-white"
   >
-    <div class="flex items-center flex-initial w-1/5">
-      <img
+    <div class="flex items-center flex-initial w-1/5 px-6 gap-x-3">
+      <!-- <img
         class="w-auto h-8"
         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
         alt="Your Company"
-      />
+      /> -->
+      <span class="text-white material-symbols-outlined" :size="40">
+        developer_mode_tv
+      </span>
+      <h2 class="text-lg font-medium text-white capitalize">Developer</h2>
     </div>
     <nav class="flex flex-row items-center justify-center flex-shrink w-full">
       <ul
         class="flex flex-row items-center justify-end flex-shrink w-full gap-2"
       >
-        <li v-for="(item, index) in menuLinks">
+        <li v-for="(item, index) in menuLinks" :key="index">
           <NuxtLink
             :to="item.link"
             class="px-4 py-2 font-medium text-white rounded"
