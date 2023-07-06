@@ -15,8 +15,10 @@ https://mokkapps.de/blog/create-a-table-of-contents-with-active-states-in-nuxt-3
 
 
 
-
-
-
+Nuxt API Query Read Docs Below
+https://www.jsdocs.io/package/h3#getQuery
 
 https://fakestoreapi.com/docs
+
+API 
+https://app.currencyapi.com/dashboard
