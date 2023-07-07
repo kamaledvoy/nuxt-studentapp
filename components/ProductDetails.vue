@@ -43,8 +43,8 @@
                       {{ product.price }}
                     </p>
                     <StarIcon
-                      v-for="rating in [0, 1, 2, 3, 4]"
-                      :key="rating"
+                      v-for="(rating, index) in [0, 1, 2, 3, 4]"
+                      :key="index"
                       :class="[
                         product.rating.rate > rating
                           ? 'text-yellow-400'

@@ -16,6 +16,10 @@
       name: "Contact",
       link: "/contact",
     },
+    {
+      name: "Login",
+      link: "/auth/login",
+    },
   ];
 </script>
 

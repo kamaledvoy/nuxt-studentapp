@@ -3,12 +3,15 @@
     class="relative z-0 flex flex-col h-screen gap-4 px-10 py-4 overflow-hidden"
   >
     <div class="bg-container"></div>
-    <div class="inline-flex flex-row items-center justify-center gap-2 pt-10">
+    <NuxtLink
+      to="/"
+      class="inline-flex flex-row items-center justify-center gap-2 pt-10 cursor-pointer"
+    >
       <span class="text-white material-symbols-outlined" :size="40">
         developer_mode_tv
       </span>
       <h2 class="text-lg font-medium text-white">Developer</h2>
-    </div>
+    </NuxtLink>
     <div class="container h-screen mx-auto">
       <div class="flex items-center w-full h-full overflow-hidden">
         <slot />

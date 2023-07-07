@@ -1,6 +1,13 @@
 <script setup lang="ts">
   definePageMeta({
     layout: "other",
+    middleware: function (to, from) {
+      // TODO: this is go to navigate
+      console.log("to:", to);
+
+      // TODO: this is coming from
+      console.log("from:", from);
+    },
   });
 
   const isPending = ref(false);

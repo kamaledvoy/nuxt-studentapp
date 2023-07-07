@@ -33,7 +33,7 @@
     <nav
       class="flex flex-row items-center justify-end flex-shrink w-full gap-4"
     >
-      <template v-for="(item, index) in menuLinks">
+      <template v-for="(item, index) in menuLinks" :key="index">
         <NuxtLink
           :to="item.link"
           class="px-4 py-2 border border-transparent rounded"

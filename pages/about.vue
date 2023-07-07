@@ -12,8 +12,8 @@
       <div>
         <h2 class="text-lg font-semibold text-white">Currency API Data</h2>
         <div
-          v-for="item in data"
-          :key="item"
+          v-for="(item, index) in data"
+          :key="index"
           class="flex flex-row items-start justify-between w-full max-w-xs border divide-x divide-white"
         >
           <div class="flex-initial w-1/2 p-1 text-white/75">
@@ -55,8 +55,8 @@
         </div>
 
         <div
-          v-for="item in courrencyValue"
-          :key="item"
+          v-for="(item, idx) in courrencyValue"
+          :key="idx"
           class="flex flex-row items-start justify-between w-full max-w-xs border divide-x divide-white"
         >
           <div class="flex-initial w-1/2 p-1 text-white/75">
