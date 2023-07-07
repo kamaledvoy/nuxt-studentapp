@@ -39,7 +39,9 @@
 </script>
 
 <template>
-  <div class="relative flex flex-col h-screen gap-4 px-10 py-4 overflow-hidden">
+  <div
+    class="relative z-0 flex flex-col h-screen gap-4 px-10 py-4 overflow-hidden"
+  >
     <div class="bg-container"></div>
     <TheHeader />
     <div class="container mx-auto h-[calc(100vh-120px)]">
@@ -77,6 +79,6 @@
     background: linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
       url("~/assets/images/bg-02.png");
     filter: blur(5px);
-    @apply bg-no-repeat bg-cover absolute inset-0 w-full h-full bg-fixed ring-2 ring-inset ring-black/50;
+    @apply bg-no-repeat bg-cover absolute inset-0 w-full h-full bg-fixed ring-2 ring-inset ring-black/50 -z-10;
   }
 </style>

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div v-for="item in 10">
+  <div v-for="(item, index) in 10" :key="index">
     <h2 class="mb-4 text-lg font-semibold text-white">Home Page {{ item }}</h2>
     <div class="mb-4 text-white/75">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quia

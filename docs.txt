@@ -6,6 +6,8 @@ npm run dev -- -o
 
 npm list nuxt
 
+<vbase-3-ts-setup
+
 
 https://sass-lang.com/guide
 
@@ -22,3 +24,24 @@ https://fakestoreapi.com/docs
 
 API 
 https://app.currencyapi.com/dashboard
+
+auth demo
+https://masteringnuxt.com/blog/logging-in-and-logging-out
+https://dev.to/rafaelmagalhaes/authentication-in-nuxt-3-375o
+
+
+
+
+
+
+
+
+Route
+
+http://localhost:3000/auth/login
+http://localhost:3000/auth/signup
+http://localhost:3000/auth/logout
+
+
+http://localhost:3000/account/profile
+http://localhost:3000/account/profile/kamal
