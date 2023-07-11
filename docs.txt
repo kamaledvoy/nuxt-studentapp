@@ -11,6 +11,8 @@ npm list nuxt
 
 https://sass-lang.com/guide
 
+#bencodezen
+https://github.com/bencodezen/bencodezen/blob/main/pages/about.vue
 
 https://mokkapps.de/blog/create-a-table-of-contents-with-active-states-in-nuxt-3
 
