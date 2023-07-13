@@ -77,7 +77,7 @@
 <style scoped>
   .bg-container {
     background: linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
-      url("~/assets/images/bg-02.png");
+      url("~/assets/images/vision-bg.jpg");
     filter: blur(5px);
     @apply bg-no-repeat bg-cover absolute inset-0 w-full h-full bg-fixed ring-2 ring-inset ring-black/50 -z-10;
   }
