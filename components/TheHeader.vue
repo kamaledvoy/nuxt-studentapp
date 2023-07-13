@@ -1,6 +1,10 @@
 <script setup>
   const menuLinks = [
     {
+      name: "Vue",
+      link: "/vue",
+    },
+    {
       name: "Home",
       link: "/",
     },
