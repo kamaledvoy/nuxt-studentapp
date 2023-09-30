@@ -16,8 +16,7 @@
 
   const handleSubmit = async () => {
     isPending.value = true;
-    console.log("The user is trying to code");
-
+    console.log("@login:", loginEmail.value, loginPassword.value);
     isPending.value = false;
   };
 </script>
