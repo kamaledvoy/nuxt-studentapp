@@ -1,5 +1,6 @@
 <template>
   <div class="text-white">
+    <Form/>
     <div>
       <h2 class="mb-4 text-lg font-semibold text-white">
         {{ book.title }}
@@ -9,7 +10,7 @@
         ref="search"
         name="search"
         type="search"
-        class="w-full h-10 px-4 mb-6 text-white bg-transparent rounded-[4px] shadow-inner focus:outline-none ring-2 ring-white/10"
+        class="w-full h-10 px-4 mb-6 text-white bg-transparent rounded shadow-inner focus:outline-none ring-2 ring-white/10"
         placeholder="Search here..."
         required
       />
@@ -56,7 +57,6 @@
 </template>
 
 <script setup lang="ts">
-  import Tabs from "../../components/ui-components/Tabs.vue";
 
   interface Book {
     title: string;
@@ -122,6 +122,7 @@
     { title: "Tab Three", value: "Tab Three Details" },
     { title: "Tab Four", value: "Tab Four Details" },
   ];
+
 </script>
 
 <style scoped></style>
