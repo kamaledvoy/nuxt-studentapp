@@ -2,34 +2,80 @@
   <div class="space-y-10">
     <div>
       <h3
-        class="text-base font-medium underline decoration-green-400 decoration-wavy underline-offset-4"
+        class="text-base font-medium underline decoration-green-400 decoration-wavy underline-offset-4 mb-4"
       >
-        Vue Forms (using Component)
+        Create Account (form input reusable Component)
       </h3>
       <div class="max-w-screen-sm mx-auto">
         <form
           class="px-6 py-4 border border-white/10 bg-black/5 rounded-lg"
           autocomplete="off"
         >
-          <base-input v-model:modalValue="title" label="Title" type="text" />
-          <base-input v-model:modalValue="description" label="Description" type="text" />
-          <base-input v-model:modalValue="location" label="Location" type="text" />
-          <base-select v-model:modalValue="category" label="Category" :options="allCategory" />
+          <BaseInput v-model:modelValue="event.name" label="Name" type="text" />
+          <BaseInput
+            v-model:modelValue="event.email"
+            label="Email"
+            type="text"
+          />
+          <BaseTextarea v-model:modelValue="event.address" label="Address" />
+          <BaseSelect
+            v-model:modelValue="event.course"
+            label="Course Select"
+            :options="allCategory"
+          />
 
-          <UIButton
-            :loading="isLoading"
-            :disabled="isDisabled"
-            @click="handleSubmit"
-          >
-            Submit
-          </UIButton>
+          <div class="text-base font-medium mb-2">Mode of Study</div>
+          <BaseRadioGroup
+            v-model="event.mode"
+            name="mode"
+            :options="modeOptions"
+            :vertical="false"
+          />
+
+          <!-- <div class="text-base font-medium mb-2">Radio button Basic Way to use</div>
+          <div class="inline-flex flex-row gap-4">
+            <BaseRadio
+              v-model:modelValue="event.mode"
+              :value="1"
+              name="mode"
+              label="Online"
+            />
+            <BaseRadio
+              v-model:modelValue="event.mode"
+              :value="0"
+              name="mode"
+              label="Offline"
+            />
+          </div> -->
+
+          <div class="text-base font-medium mb-2">Dialy Activity</div>
+          <div class="inline-flex flex-row gap-4">
+            <BaseCheckbox
+              v-model:modelValue="event.extras.subscribe"
+              label="subscribe"
+            />
+            <BaseCheckbox
+              v-model:modelValue="event.extras.notification"
+              label="Notification"
+            />
+          </div>
+
+          <div class="mt-4">
+            <UIButton
+              :loading="isLoading"
+              :disabled="isDisabled"
+              @click="handleSubmit"
+            >
+              Submit
+            </UIButton>
+          </div>
         </form>
       </div>
     </div>
 
     <div>
       <h3
-        class="text-base font-medium underline decoration-green-400 decoration-wavy underline-offset-4"
+        class="text-base font-medium underline decoration-green-400 decoration-wavy underline-offset-4 mb-4"
       >
         Form input Modal 2
       </h3>
@@ -88,13 +134,29 @@ import { ref } from 'vue';
 import { PlusCircleIcon } from '@heroicons/vue/24/solid';
 import { BellIcon } from '@heroicons/vue/24/outline';
 
-const title = ref('')
-const description = ref('')
-const location = ref('')
-const category = ref('')
+const event = ref({
+  name: '',
+  email: '',
+  address: '',
+  mode: 1,
+  course: '',
+  extras: {
+    notification: false,
+    subscribe: true,
+  },
+});
 
-
-const allCategory = [ 'Input', 'Button', 'Select', 'Textarea', 'Radio', 'Checkbox']
+const modeOptions = [
+  {
+    label: 'Online',
+    value: 1,
+  },
+  {
+    label: 'Offline',
+    value: 0,
+  },
+];
+const allCategory = ['React', 'Vue', 'Angular'];
 
 // form modal2
 const email = ref('');

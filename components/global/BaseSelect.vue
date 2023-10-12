@@ -1,25 +1,28 @@
-import { emit } from "process";
 <template>
-  <label v-if="label">{{ label }}</label>
-  <select
-    :value="modelValue"
-    v-bind="{
-      ...$attrs,
-      onChange: ($event) => {
-        $emit('update:modelValue', $event.target?.value);
-      },
-    }"
-    class="w-full h-10 px-4 mb-6 text-white bg-transparent rounded shadow-inner focus:outline-none ring-2 ring-white/10"
-  >
-    <option
-      v-for="option in options"
-      :value="option"
-      :key="option"
-      :selected="option === modelValue"
+  <div class="mb-4 space-y-1">
+    <label v-if="label" :for="label" class="text-sm font-medium capitalize">{{
+      label
+    }}</label>
+    <select
+      :value="modelValue"
+      v-bind="{
+        ...$attrs,
+        onChange: ($event) => {
+          $emit('update:modelValue', $event.target?.value);
+        },
+      }"
+      class="w-full h-10 px-4 text-white bg-transparent rounded shadow-inner focus:outline-none ring-2 ring-white/10"
     >
-      {{ option }}
-    </option>
-  </select>
+      <option
+        v-for="option in options"
+        :value="option"
+        :key="option"
+        :selected="option === modelValue"
+      >
+        {{ option }}
+      </option>
+    </select>
+  </div>
 </template>
 
 <script setup lang="ts">
