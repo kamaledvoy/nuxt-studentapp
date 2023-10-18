@@ -8,6 +8,7 @@
       </h3>
       <div class="max-w-screen-sm mx-auto">
         <form
+          @submit.prevent="sendForm"
           class="px-6 py-4 border border-white/10 bg-black/5 rounded-lg"
           autocomplete="off"
         >
@@ -61,15 +62,12 @@
           </div>
 
           <div class="mt-4">
-            <UIButton
-              :loading="isLoading"
-              :disabled="isDisabled"
-              @click="handleSubmit"
-            >
+            <UIButton type="submit" :loading="isLoading" :disabled="isDisabled">
               Submit
             </UIButton>
           </div>
         </form>
+        <pre>{{ event }}</pre>
       </div>
     </div>
 
@@ -131,7 +129,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { PlusCircleIcon } from '@heroicons/vue/24/solid';
 import { BellIcon } from '@heroicons/vue/24/outline';
 
 const event = ref({
@@ -145,6 +142,15 @@ const event = ref({
     subscribe: true,
   },
 });
+
+const sendForm = () => {
+  try {
+    const response = event.value;
+    console.log('Response', response);
+  } catch (error) {
+    console.log('Error', error);
+  }
+};
 
 const modeOptions = [
   {
