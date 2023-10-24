@@ -77,7 +77,7 @@ const handleSubmit = async () => {
           </template>
         </div>
 
-        <div :class="{ error: v$.form.password.$errors.length }">
+        <div>
           <input
             v-model="v$.form.password.$model"
             name="loginPassword"
@@ -86,12 +86,8 @@ const handleSubmit = async () => {
             placeholder="Password"
             required
           />
-          <template
-            v-for="(error, index) of v$.form.password.$errors"
-            :key="index"
-          >
-            <div class="text-yellow-300 text-xs">{{ error.$message }}</div>
-          </template>
+
+  <div v-if="v$.form.password.$error" class="text-yellow-300 text-xs">{{ v$.form.password.$errors[0].$message  }}</div>
         </div>
 
         <div class="flex items-center justify-between mb-4">
