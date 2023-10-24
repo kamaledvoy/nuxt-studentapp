@@ -1,5 +1,6 @@
 <template>
   <div class="text-white">
+  <FormCreateAccount />
     <Form/>
     <div>
       <h2 class="mb-4 text-lg font-semibold text-white">

@@ -1,24 +1,54 @@
 <script setup lang="ts">
-  definePageMeta({
-    layout: "other",
-    middleware: function (to, from) {
-      // TODO: this is go to navigate
-      console.log("to:", to);
+import { ref, defineProps } from 'vue';
+import useVuelidate from '@vuelidate/core';
+import { required, email, minLength } from '@vuelidate/validators';
 
-      // TODO: this is coming from
-      console.log("from:", from);
+const { form } = defineProps(['form']);
+
+const state = reactive({
+  form: {
+    email: '',
+    password: '',
+  },
+});
+
+const rules = {
+  form: {
+    email: {
+      required,
+      email,
     },
-  });
+    password: {
+      required,
+      minLength: minLength(6),
+    },
+  },
+};
 
-  const isPending = ref(false);
-  const loginEmail = ref("");
-  const loginPassword = ref("");
+const v$ = useVuelidate(rules, state);
 
-  const handleSubmit = async () => {
-    isPending.value = true;
-    console.log("@login:", loginEmail.value, loginPassword.value);
-    isPending.value = false;
-  };
+
+
+definePageMeta({
+  layout: 'other',
+  middleware: function (to, from) {
+    // TODO: this is go to navigate
+    console.log('to:', to);
+
+    // TODO: this is coming from
+    console.log('from:', from);
+  },
+});
+
+const isPending = ref(false);
+
+const handleSubmit = async () => {
+  isPending.value = true;
+  console.log('@login:');
+  isPending.value = false;
+};
+
+
 </script>
 <template>
   <div
@@ -33,22 +63,37 @@
         </p>
       </div>
       <form @submit.prevent="handleSubmit" class="my-4">
-        <input
-          v-model="loginEmail"
-          name="loginEmail"
-          type="text"
-          class="w-full h-10 px-4 mb-6 text-white bg-transparent rounded-[4px] shadow-inner focus:outline-none ring-2 ring-white/10"
-          placeholder="E-mail Address"
-          required
-        />
-        <input
-          v-model="loginPassword"
-          name="loginPassword"
-          type="text"
-          class="w-full h-10 px-4 mb-6 text-white bg-transparent rounded-[4px] shadow-inner focus:outline-none ring-2 ring-white/10"
-          placeholder="Password"
-          required
-        />
+        <div :class="{ error: v$.form.email.$errors.length }">
+          <input
+            v-model="v$.form.email.$model"
+            name="loginEmail"
+            type="text"
+            class="w-full h-10 px-4 mb-6 text-white bg-transparent rounded-[4px] shadow-inner focus:outline-none ring-2 ring-white/10"
+            placeholder="E-mail Address"
+            required
+          />
+          <template v-for="error of v$.form.email.$errors" :key="error.$uid">
+            <div class="text-yellow-300 text-xs">{{ error.$message }}</div>
+          </template>
+        </div>
+
+        <div :class="{ error: v$.form.password.$errors.length }">
+          <input
+            v-model="v$.form.password.$model"
+            name="loginPassword"
+            type="text"
+            class="w-full h-10 px-4 mb-6 text-white bg-transparent rounded-[4px] shadow-inner focus:outline-none ring-2 ring-white/10"
+            placeholder="Password"
+            required
+          />
+          <template
+            v-for="(error, index) of v$.form.password.$errors"
+            :key="index"
+          >
+            <div class="text-yellow-300 text-xs">{{ error.$message }}</div>
+          </template>
+        </div>
+
         <div class="flex items-center justify-between mb-4">
           <div class="inline-flex items-center gap-x-2">
             <input type="checkbox" class="w-4 h-4" />
@@ -64,7 +109,7 @@
         </div>
         <button
           v-if="!isPending"
-          :disabled="!loginEmail || !loginPassword"
+          :disabled="v$.form.$invalid"
           class="w-full px-6 py-2 font-semibold text-center text-white rounded-[4px] cursor-pointer glass-morphism hover:glass-morphism"
         >
           Log In
