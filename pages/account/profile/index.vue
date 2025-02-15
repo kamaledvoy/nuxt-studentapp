@@ -5,7 +5,10 @@
 </template>
 
 <script setup lang="ts">
-  definePageMeta({
+  const currentUser = useCookie("current-user");
+  const isAuthenticated = useCookie("is-authenticated");
+
+    definePageMeta({
     layout: "default",
     middleware: ["profile"],
   });

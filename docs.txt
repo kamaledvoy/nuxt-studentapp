@@ -33,11 +33,6 @@ https://dev.to/rafaelmagalhaes/authentication-in-nuxt-3-375o
 
 
 
-
-
-
-
-
 Route
 
 http://localhost:3000/auth/login

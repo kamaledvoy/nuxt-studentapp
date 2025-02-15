@@ -4,7 +4,6 @@ import useVuelidate from '@vuelidate/core';
 import { required, email, minLength } from '@vuelidate/validators';
 
 const { form } = defineProps(['form']);
-
 const state = reactive({
   form: {
     email: '',
@@ -27,8 +26,6 @@ const rules = {
 
 const v$ = useVuelidate(rules, state);
 
-
-
 definePageMeta({
   layout: 'other',
   middleware: function (to, from) {
@@ -44,7 +41,7 @@ const isPending = ref(false);
 
 const handleSubmit = async () => {
   isPending.value = true;
-  console.log('@login:');
+  console.log('@login:', );
   isPending.value = false;
 };
 
@@ -73,7 +70,7 @@ const handleSubmit = async () => {
             required
           />
           <template v-for="error of v$.form.email.$errors" :key="error.$uid">
-            <div class="text-yellow-300 text-xs">{{ error.$message }}</div>
+            <div class="text-xs text-yellow-300">{{ error.$message }}</div>
           </template>
         </div>
 
@@ -87,7 +84,7 @@ const handleSubmit = async () => {
             required
           />
 
-  <div v-if="v$.form.password.$error" class="text-yellow-300 text-xs">{{ v$.form.password.$errors[0].$message  }}</div>
+  <div v-if="v$.form.password.$error" class="text-xs text-yellow-300">{{ v$.form.password.$errors[0].$message  }}</div>
         </div>
 
         <div class="flex items-center justify-between mb-4">
