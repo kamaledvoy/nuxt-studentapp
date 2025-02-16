@@ -40,7 +40,7 @@
 
 <template>
   <div
-    class="relative z-0 flex flex-col h-screen gap-4 px-10 py-4 overflow-hidden"
+    class="relative z-0 flex flex-col h-screen gap-2.5 px-10 py-2.5 overflow-hidden"
   >
     <div class="bg-container"></div>
     <TheHeader />
@@ -49,7 +49,7 @@
         class="flex flex-row justify-between w-full h-full overflow-hidden rounded-3xl"
       >
         <div
-          class="flex-shrink p-6 text-white/75 glass-morphism-gray rounded-l-3xl w-72 h-[calc(100vh-178px)] overflow-y-scroll scrollbar-hide space-y-2"
+          class="flex-shrink p-6 text-white/75 glass-morphism-gray rounded-l-3xl w-72 h-[calc(100vh-140px)] overflow-y-scroll scrollbar-hide space-y-2"
         >
           <button
             v-for="(menu, index) in menuLinks"
@@ -64,7 +64,7 @@
         </div>
 
         <div
-          class="flex-1 col-span-5 overflow-y-scroll glass-morphism h-[calc(100vh-178px)] rounded-r-3xl border-transparent ring-0 p-6 flex-shrink"
+          class="flex-1 col-span-5 overflow-y-scroll glass-morphism h-[calc(100vh-140px)] rounded-r-3xl border-transparent ring-0 p-6 flex-shrink"
         >
           <slot />
         </div>

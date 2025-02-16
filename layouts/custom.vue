@@ -23,12 +23,13 @@
   <header
     class="flex justify-between w-full h-16 gap-4 px-12 bg-white border-b border-gray-100"
   >
-    <div class="flex items-center flex-initial w-1/5">
+   <div class="flex items-center flex-initial w-1/3 px-6 gap-x-3">
       <img
         class="w-auto h-8"
-        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+        src="~/assets/images/dream-designs.png"
         alt="Your Company"
       />
+      <h2 class="text-lg font-bold text-black capitalize">Dream Designs</h2>
     </div>
     <nav
       class="flex flex-row items-center justify-end flex-shrink w-full gap-4"
@@ -54,20 +55,17 @@
     </div>
   </header>
 
-  <div class="flex flex-col h-screen">
-    <div class="h-[calc(100vh-120px)] overflow-y-scroll">
+  <div class="min-h-screen overflow-y-scroll bg-gray-50">
       <div class="container py-4 mx-auto">
         <slot />
       </div>
     </div>
-  </div>
 
   <footer>
     <div
-      class="inline-flex items-center justify-center w-full h-16 font-normal text-center border-t border-gray-100 font-base text-grey-600"
+      class="inline-flex items-center justify-center w-full h-10 text-xs font-normal text-center border-t border-gray-100 text-grey-600"
     >
-      &copy; {{ new Date().getFullYear() }} Design<sup><small>TM</small></sup>
-      Limited. All Rights Reserved.
+      &copy; {{ new Date().getFullYear() }} Dream Designs<sup><small>TM</small></sup> Limited. All Rights Reserved.
     </div>
   </footer>
 </template>

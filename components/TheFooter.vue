@@ -1,8 +1,8 @@
 <template>
   <div
-    class="inline-flex items-center justify-center w-full h-16 max-w-md mx-auto font-normal text-center text-white rounded-full font-base text-grey-600 glass-morphism-black"
+    class="inline-flex items-center justify-center w-full h-10 px-4 mx-auto text-xs font-normal text-center rounded-full text-white/80 max-w-max text-grey-600 glass-morphism-black"
   >
-    &copy; {{ new Date().getFullYear() }} Design<sup><small>TM</small></sup>
+    &copy; {{ new Date().getFullYear() }} Dream Designs<sup><small>TM</small></sup>
     &nbsp; Limited. All Rights Reserved.
   </div>
 </template>

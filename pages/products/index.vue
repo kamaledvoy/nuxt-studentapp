@@ -1,14 +1,14 @@
 <template>
   <div class="product-page">
-    <h3 class="mb-4 text-lg font-semibold">Product Page</h3>
+    <h3 class="text-lg font-semibold">Product Page</h3>
     <p class="mb-4 text-base font-normal">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit eveniet
       ipsum ab excepturi dignissimos.
     </p>
 
-    <div class="bg-white">
+    <div class="bg-gray-100 rounded-md">
       <div
-        class="max-w-2xl px-4 py-10 mx-auto sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+        class="max-w-2xl px-4 py-10 mx-auto sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8"
       >
         <div class="md:flex md:items-center md:justify-between">
           <h2 class="text-2xl font-bold tracking-tight text-gray-900">
@@ -24,7 +24,7 @@
         </div>
 
         <div
-          class="grid grid-cols-2 mt-6 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-8"
+          class="grid grid-cols-2 mt-6 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-4"
         >
           <template v-for="product in products" :key="product.id">
             <ProductCard :product="product" />

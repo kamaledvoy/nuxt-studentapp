@@ -1,5 +1,5 @@
 <template>
-  <div class="relative border border-gray-100 rounded-md group">
+  <div class="relative bg-white border border-gray-100 rounded-lg group">
     <div
       class="w-full h-56 overflow-hidden bg-white rounded-md group-hover:opacity-75"
     >
@@ -24,7 +24,7 @@
 
       <NuxtLink
         :to="`/products/${product.id}`"
-        class="block w-full px-6 py-2 mb-2 text-base font-semibold text-center text-white bg-green-500 rounded-md"
+        class="block w-full px-6 py-2 mb-3 text-base font-medium text-center text-white bg-green-500 rounded-3xl"
       >
         View Details
       </NuxtLink>
