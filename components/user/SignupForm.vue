@@ -1,19 +1,19 @@
 <script setup lang="ts">
-  definePageMeta({
-    layout: "other",
-  });
+definePageMeta({
+  layout: "other",
+});
 
-  const isPending = ref(false);
-  const signupEmail = ref("");
-  const signupPassword = ref("");
-  const confirmPassword = ref("");
+const isPending = ref(false);
+const signupEmail = ref("");
+const signupPassword = ref("");
+const confirmPassword = ref("");
 
-  const handleSubmit = async () => {
-    isPending.value = true;
-    console.log("The user is trying to code");
+const handleSubmit = async () => {
+  isPending.value = true;
+  console.log("The user is trying to code");
 
-    isPending.value = false;
-  };
+  isPending.value = false;
+};
 </script>
 <template>
   <div
@@ -71,7 +71,10 @@
 
       <div class="text-sm text-center text-white/70">
         Already signup go to
-        <NuxtLink to="/auth/login" class="font-bold text-white cursor-pointer">
+        <NuxtLink
+          to="/login?form=login"
+          class="font-bold text-white cursor-pointer"
+        >
           Login</NuxtLink
         >
       </div>

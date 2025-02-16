@@ -136,7 +136,7 @@ const loginUser = async () => {
 
       <div class="text-sm text-center text-white/70">
         Don't have a account?
-        <NuxtLink to="/auth/signup" class="font-bold text-white cursor-pointer">
+        <NuxtLink to="/login?form=signup" class="font-bold text-white cursor-pointer">
           Sign Up</NuxtLink
         >
       </div>

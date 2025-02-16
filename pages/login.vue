@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import LoginForm from '~/components/user/LoginForm.vue';
+import SignupForm from '~/components/user/SignupForm.vue';
 
 definePageMeta({
   layout: 'other',
@@ -16,8 +17,13 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <LoginForm page-title="User Login" />
+  <div class="min-h-screen">
+    <template v-if="$route.query.form === 'signup'">
+      <SignupForm />
+    </template>
+    <template v-else>
+      <LoginForm page-title="User Login" />
+    </template>
   </div>
 </template>
 
