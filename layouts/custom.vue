@@ -26,7 +26,7 @@
     <div class="flex items-center flex-initial w-1/5">
       <img
         class="w-auto h-8"
-        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
         alt="Your Company"
       />
     </div>

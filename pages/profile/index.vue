@@ -5,13 +5,13 @@
 </template>
 
 <script setup lang="ts">
-  const currentUser = useCookie("current-user");
-  const isAuthenticated = useCookie("is-authenticated");
+const currentUser = useCookie("current-user");
+const isAuthenticated = useCookie("is-authenticated");
 
-    definePageMeta({
-    layout: "default",
-    middleware: ["profile"],
-  });
+definePageMeta({
+  layout: "default",
+  middleware: ["profile"],
+});
 </script>
 
 <style scoped></style>

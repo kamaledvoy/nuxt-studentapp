@@ -1,13 +1,19 @@
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
-import useVuelidate from '@vuelidate/core';
-import { required, email, minLength } from '@vuelidate/validators';
+import useVuelidate from "@vuelidate/core";
+import { required, email, minLength } from "@vuelidate/validators";
 
-const { form } = defineProps(['form']);
-const state = reactive({
+const props = defineProps({
+  pageTitle: {
+    type: String,
+    default: "",
+  },
+});
+const { pageTitle } = toRefs(props);
+
+const usertState = reactive({
   form: {
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   },
 });
 
@@ -24,42 +30,49 @@ const rules = {
   },
 };
 
-const v$ = useVuelidate(rules, state);
-
-definePageMeta({
-  layout: 'other',
-  middleware: function (to, from) {
-    // TODO: this is go to navigate
-    console.log('to:', to);
-
-    // TODO: this is coming from
-    console.log('from:', from);
-  },
-});
-
+const v$ = useVuelidate(rules, usertState);
 const isPending = ref(false);
+const isAuthenticated = useCookie("is-authenticated");
+const currentUser = useCookie("current-user");
+const router = useRouter();
 
-const handleSubmit = async () => {
+const loginUser = async () => {
   isPending.value = true;
-  console.log('@login:', );
-  isPending.value = false;
+  console.log("@login:", usertState.form);
+  try {
+    const response = await $fetch("/api/login", {
+      method: "POST",
+      body: {
+        email: usertState.form.email,
+        password: usertState.form.password,
+      },
+    });
+    // Process the API response here
+    console.log("API response:", response);
+    isAuthenticated.value = "true";
+    currentUser.value = usertState.form.email;
+    router.push("/profile/" + usertState.form.email);
+  } catch (error) {
+    console.error("Error logging in:", error);
+  } finally {
+    isPending.value = false;
+  }
 };
-
-
 </script>
+
 <template>
   <div
     class="p-10 glass-morphism rounded-3xl max-w-md max-h-[448px] w-full h-full"
   >
     <div class="max-w-xs mx-auto">
       <div class="space-y-4">
-        <h3 class="text-xl font-semibold text-white">Log In</h3>
+        <h3 class="text-xl font-semibold text-white">{{ pageTitle }}</h3>
         <p class="text-sm font-normal text-white/75">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit eveniet
           ipsum dignissimos.
         </p>
       </div>
-      <form @submit.prevent="handleSubmit" class="my-4">
+      <form @submit.prevent class="my-4">
         <div :class="{ error: v$.form.email.$errors.length }">
           <input
             v-model="v$.form.email.$model"
@@ -70,7 +83,7 @@ const handleSubmit = async () => {
             required
           />
           <template v-for="error of v$.form.email.$errors" :key="error.$uid">
-            <div class="text-xs text-yellow-300">{{ error.$message }}</div>
+            <div class="text-xs text-red-600">{{ error.$message }}</div>
           </template>
         </div>
 
@@ -84,7 +97,9 @@ const handleSubmit = async () => {
             required
           />
 
-  <div v-if="v$.form.password.$error" class="text-xs text-yellow-300">{{ v$.form.password.$errors[0].$message  }}</div>
+          <div v-if="v$.form.password.$error" class="text-xs text-red-600">
+            {{ v$.form.password.$errors[0].$message }}
+          </div>
         </div>
 
         <div class="flex items-center justify-between mb-4">
@@ -102,8 +117,10 @@ const handleSubmit = async () => {
         </div>
         <button
           v-if="!isPending"
+          type="submit"
           :disabled="v$.form.$invalid"
           class="w-full px-6 py-2 font-semibold text-center text-white rounded-[4px] cursor-pointer glass-morphism hover:glass-morphism"
+          @click="loginUser"
         >
           Log In
         </button>

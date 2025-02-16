@@ -22,7 +22,7 @@
     },
     {
       name: "Login",
-      link: "/auth/login",
+      link: "/login",
     },
   ];
 </script>

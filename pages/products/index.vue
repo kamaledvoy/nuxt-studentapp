@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="product-page">
     <h3 class="mb-4 text-lg font-semibold">Product Page</h3>
     <p class="mb-4 text-base font-normal">
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit eveniet
@@ -50,6 +50,7 @@
   useHead({
     title: "Student App Products Page",
     meta: [{ name: "description", content: "Student App Products List Page" }],
+    link: [{ rel: "stylesheet", href: '/css/custom-page.css'}]
   });
 
   const {

@@ -9,10 +9,8 @@
       function (from, to) {
         const isAuthenticated = useCookie("is-authenticated");
         const currentUser = useCookie("current-user");
-
         isAuthenticated.value = "";
         currentUser.value = "";
-
         return navigateTo("/");
       },
     ],

@@ -4,7 +4,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
   // TODO: Error handling
 
-  //   if (to.path === "/auth/login") {
+  //   if (to.path === "/login") {
   //     throw createError({
   //       statusCode: 405,
   //       statusMessage: "Login page Error! Please try again",
@@ -13,7 +13,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
   //   try {
   //     const data: any = await useFetch("/api/this-path");
-  //     return navigateTo("/account/profile/" + data?.user?.name);
+  //     return navigateTo("/profile/" + data?.user?.name);
   //   } catch (error: any) {
   //     abortNavigation(error);
   //   }

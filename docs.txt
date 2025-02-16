@@ -3,6 +3,9 @@ npm install
 npm run dev -- -o
 
 
+cmd
+/Volumes/work/kamal/nuxt-studentapp
+
 
 npm list nuxt
 
@@ -35,13 +38,13 @@ https://dev.to/rafaelmagalhaes/authentication-in-nuxt-3-375o
 
 Route
 
-http://localhost:3000/auth/login
+http://localhost:3000/login
 http://localhost:3000/auth/signup
-http://localhost:3000/auth/logout
+http://localhost:3000/logout
 
 
-http://localhost:3000/account/profile
-http://localhost:3000/account/profile/kamal
+http://localhost:3000/profile
+http://localhost:3000/profile/kamal
 
 
 
@@ -49,3 +52,31 @@ Next add
 
 1.defineAsyncComponent
 2.
+
+
+middleMiddleware
+1. two type of middleMiddleware server and client
+2. middleMiddleware is a javascript function using two parameters
+function(to, from){
+    return  navigateTo('/login')
+}
+
+3. user account
+
+function (to, from){
+    if(to.path === '/admin' && user.admin === false){
+      return  navigateTo('/login', {
+        replace: true,
+        redirectCode: 302,
+        external: true
+      })
+    }
+}
+
+use navigateTo(), abortNavigation(), do nothing (custom logic)
+
+4.inline middleMiddleware
+
+http://localhost:3000/login
+http://localhost:3000/logout
+http://localhost:3000/profile/kamal

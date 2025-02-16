@@ -7,5 +7,5 @@ export default defineNuxtRouteMiddleware((to, from) => {
   isAuthenticated.value = "";
   currentUser.value = "";
 
-  return navigateTo("/");
+  return navigateTo("/"); // change login page
 });
