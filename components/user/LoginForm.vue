@@ -51,7 +51,8 @@ const loginUser = async () => {
     console.log("API response:", response);
     isAuthenticated.value = "true";
     currentUser.value = usertState.form.email;
-    router.push("/profile/" + usertState.form.email);
+    // router.push("/profile/" + usertState.form.email);
+    router.push("/profile");
   } catch (error) {
     console.error("Error logging in:", error);
   } finally {

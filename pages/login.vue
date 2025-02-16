@@ -6,10 +6,8 @@ definePageMeta({
   middleware: function (to, from) {
     const isAuthenticated = useCookie("is-authenticated");
     const currentUser = useCookie("current-user");
-
     if (isAuthenticated.value && currentUser.value) {
-      console.log("is Authenticated");
-      return navigateTo("/profile/" + currentUser.value);
+      return navigateTo("/profile");
     } else {
       console.log("not Authenticated");
     }

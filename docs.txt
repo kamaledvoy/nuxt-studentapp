@@ -44,7 +44,9 @@ http://localhost:3000/logout
 
 
 http://localhost:3000/profile
-http://localhost:3000/profile/kamal
+http://localhost:3000/profile/kamal@edvoy.com
+http://localhost:3000/profile/orderlist
+http://localhost:3000/profile/settings
 
 
 
