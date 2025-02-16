@@ -7,13 +7,15 @@
       to="/"
       class="inline-flex flex-row items-center justify-center gap-2 pt-10 cursor-pointer"
     >
-      <span class="text-white material-symbols-outlined" :size="40">
-        developer_mode_tv
-      </span>
-      <h2 class="text-lg font-medium text-white">Developer</h2>
+     <img
+        class="w-auto h-8"
+        src="~/assets/images/dream-designs.png"
+        alt="Your Company"
+      />
+      <h2 class="text-lg font-bold text-white capitalize">Dream Designs</h2>
     </NuxtLink>
-    <div class="container h-screen mx-auto">
-      <div class="flex items-center w-full h-full overflow-hidden">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-center w-full h-full pt-10 overflow-hidden">
         <slot />
       </div>
     </div>
@@ -38,7 +40,7 @@
   .bg-container {
     background: linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
       url("~/assets/images/bg-02.png");
-    filter: blur(5px);
+    filter: blur(1px);
     @apply bg-no-repeat bg-cover absolute inset-0 w-full h-full bg-fixed ring-2 ring-inset ring-black/50 -z-10;
   }
 </style>
