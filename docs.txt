@@ -82,3 +82,10 @@ use navigateTo(), abortNavigation(), do nothing (custom logic)
 http://localhost:3000/login
 http://localhost:3000/logout
 http://localhost:3000/profile/kamal
+
+
+
+component link added
+http://localhost:3000/ui
+http://localhost:3000/vue/animation
+http://localhost:3000/vue/movie
