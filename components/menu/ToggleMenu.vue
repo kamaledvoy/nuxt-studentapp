@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 bg-white border border-gray-200 rounded-lg max-w-fit">
+  <div class="w-full p-4 bg-white border border-gray-200 rounded-lg">
     <div class="h-auto transition-all duration-100 ease-in">
       <template v-for="(menu, menuIndex) in menuItems">
         <div
