@@ -5,6 +5,10 @@
       link: "/vue",
     },
     {
+      name: 'UI',
+      link: "/ui"
+    },
+    {
       name: "Home",
       link: "/",
     },
